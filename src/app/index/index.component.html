@@ -1,0 +1,153 @@
+<div class="crypto-landing">
+  <!-- Hero Section con efecto parallax -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="badge">
+        <span class="badge-text">🚀 LIVE MARKET DATA</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="gradient-text">CryptoMonitor</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Monitorea el mercado de criptomonedas en tiempo real<br>
+        con precisión.
+      </p>
+
+      <div class="cta-group">
+        <button (click)="goToDashboard()" class="btn btn-primary">
+  <span>Ir al Dashboard</span>
+  <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+        <!--
+        <a routerLink="/dashboard" class="btn btn-glass">
+          <span>Explorar mercados</span>
+        </a>
+    -->
+      </div>
+
+
+      <div class="market-ticker">
+        <div class="ticker-item">
+          <span class="ticker-label">BTC</span>
+          <span class="ticker-value">$60,012</span>
+          <span class="ticker-change negative">-3.07%</span>
+        </div>
+        <div class="ticker-divider"></div>
+        <div class="ticker-item">
+          <span class="ticker-label">ETH</span>
+          <span class="ticker-value">$2,993</span>
+          <span class="ticker-change positive">+0.27%</span>
+        </div>
+        <div class="ticker-divider"></div>
+        <div class="ticker-item">
+          <span class="ticker-label">SOL</span>
+          <span class="ticker-value">$283.35</span>
+          <span class="ticker-change positive">+4.34%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="scroll-text">Descubre más</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon realtime">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Tiempo Real</h3>
+        <p>Datos actualizados al segundo de los principales exchanges</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon volatility">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <path d="M3 17L7 13L11 17L17 11L21 15" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Análisis de Volatilidad</h3>
+        <p>Métricas avanzadas para tomar mejores decisiones</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon design">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+            <circle cx="15" cy="15" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3>Diseño Premium</h3>
+        <p>Interfaz elegante y fácil de usar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview Section -->
+  <section class="preview">
+    <div class="preview-content">
+      <h2>Mercado en Movimiento</h2>
+      <p>Visualiza todas tus criptomonedas favoritas en un solo lugar</p>
+
+      <div class="preview-cards">
+        <div class="preview-card btc">
+          <div class="preview-header">
+            <span class="preview-symbol">₿</span>
+            <span class="preview-name">Bitcoin</span>
+          </div>
+        </div>
+        <div class="preview-card eth">
+          <div class="preview-header">
+            <span class="preview-symbol">Ξ</span>
+            <span class="preview-name">Ethereum</span>
+          </div>
+        </div>
+        <div class="preview-card sol">
+          <div class="preview-header">
+            <span class="preview-symbol">◎</span>
+            <span class="preview-name">Solana</span>
+          </div>
+        </div>
+        <div class="preview-card ada">
+          <div class="preview-header">
+            <span class="preview-symbol">₳</span>
+            <span class="preview-name">Cardano</span>
+          </div>
+        </div>
+        <div class="preview-card dot">
+          <div class="preview-header">
+            <span class="preview-symbol">◈</span>
+            <span class="preview-name">Polkadot</span>
+          </div>
+        </div>
+      </div>
+
+     <button (click)="goToDashboard()" class="btn btn-outline">
+  Ver dashboard completo
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5"/>
+  </svg>
+</button>
+    </div>
+  </section>
+
+</div>

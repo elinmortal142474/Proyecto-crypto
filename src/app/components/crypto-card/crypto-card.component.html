@@ -1,0 +1,23 @@
+<div class="card" [class.alert-mode]="data.price > threshold">
+  <div class="card-header">
+    <div class="coin-info">
+      <img [src]="data.image"
+           [alt]="'Logo de ' + data.name"
+           class="crypto-logo"
+           [class.logo-featured]="data.id === 'btc'"
+           [class.logo-ada]="data.id === 'ada'">
+      <h3>{{ data.name }}</h3>
+    </div>
+    <span class="badge" [style.color]="data.changePercent >= 0 ? 'var(--up-color)' : 'var(--down-color)'">
+      {{ data.changePercent > 0 ? '+' : '' }}{{ data.changePercent | number:'1.2-2' }}%
+    </span>
+  </div>
+
+  <p class="price" [appHighlightChange]="data.price">
+    ${{ data.price | number:'1.2-2' }}
+  </p>
+
+  <div class="stats">
+    <small>Volatilidad: <strong>{{ stats?.volatility ?? 0 | number:'1.4-4' }}</strong></small>
+  </div>
+</div>

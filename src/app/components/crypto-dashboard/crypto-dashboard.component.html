@@ -1,0 +1,42 @@
+<div class="dashboard-wrapper">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="content-container">
+    <button (click)="goToIndex()" class="boton-regreso-crypto">
+      <span class="icono-flecha-crypto">←</span>
+      <span class="texto-regreso-crypto">
+        <span class="texto-superior-regreso">Volver al Inicio</span>
+        <span class="texto-inferior-regreso">CryptoMonitor</span>
+      </span>
+    </button>
+
+    <div class="dashboard">
+      <!-- ✅ NUEVO: Header de alerta justo arriba del input -->
+      <div class="alerta-header">
+       ⚠️ <h1>Alerta por caída crítica</h1>
+        <p>Configura el umbral mínimo de precio para recibir alertas</p>
+      </div>
+
+      <!-- ✅ Input del umbral - exactamente igual pero con clase opcional -->
+      <input
+        type="number"
+        (input)="updateThreshold($event)"
+        [value]="threshold()"
+        placeholder="Umbral de Alerta"
+        class="threshold-input"
+      />
+
+      <div class="grid">
+        @for (crypto of cryptos(); track crypto.id) {
+          <app-crypto-card
+            [data]="crypto"
+            [threshold]="threshold()"
+            [stats]="stats()[crypto.id]"
+          ></app-crypto-card>
+        }
+      </div>
+    </div>
+  </div>
+</div>

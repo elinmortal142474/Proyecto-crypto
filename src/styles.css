@@ -1,0 +1,179 @@
+/* src/styles.css */
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --accent-blue: #38bdf8;
+  --up-color: #22c55e;
+  --down-color: #ef4444;
+  --alert-border: #f59e0b;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ESTRUCTURA GLOBAL: Esto es lo único que debe haber del layout aquí */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Empuja el contenido para que el footer baje */
+router-outlet + * {
+  flex: 1;
+}
+
+app-footer {
+  margin-top: auto; /* Esto garantiza que el footer siempre esté abajo */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Estilo para el input del umbral de alerta*/
+input[type="number"] {
+  background: var(--card-bg);
+  border: 1px solid #334155;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--accent-blue);
+  border-color: transparent;
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== BOTÓN VOLVER AL INICIO */
+.boton-regreso-crypto {
+  position: fixed;
+  bottom: 35px;
+  left: 35px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 32px;
+  background: linear-gradient(145deg, #1a1e2c, #0f1219);
+  border-radius: 100px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 99999;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  backdrop-filter: blur(5px);
+}
+
+.boton-regreso-crypto:hover {
+  background: linear-gradient(145deg, #232837, #151a24);
+  transform: translateX(-10px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.boton-regreso-crypto:active {
+  transform: translateX(-5px) scale(0.98);
+}
+
+.icono-flecha-crypto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: #a78bfa;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.4));
+}
+
+.boton-regreso-crypto:hover .icono-flecha-crypto {
+  transform: translateX(-8px);
+  color: #c4b5fd;
+  filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.7));
+}
+
+.texto-regreso-crypto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.3;
+}
+
+.texto-superior-regreso {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.texto-inferior-regreso {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(167, 139, 250, 0.9);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Efecto de brillo neón */
+.boton-regreso-crypto::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #8b5cf6);
+  border-radius: 102px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -2;
+}
+
+.boton-regreso-crypto:hover::before {
+  opacity: 0.5;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .boton-regreso-crypto {
+    bottom: 25px;
+    left: 25px;
+    padding: 14px 26px;
+  }
+
+  .texto-inferior-regreso {
+    display: none;
+  }
+}
